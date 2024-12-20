@@ -83,9 +83,14 @@ VALIDATE-COMMAND handler."
 
 (defun chatgpt-shell-google-models ()
   "Build a list of Google LLM models available."
-  ;; Context windows have been verified as of 11/26/2024. See
+  ;; Context windows have been verified as of 2024-12-26. See
   ;; https://ai.google.dev/gemini-api/docs/models/gemini.
-  (list (chatgpt-shell-google-make-model :version "gemini-1.5-pro-latest"
+  (list (chatgpt-shell-google-make-model :version "gemini-2.0-flash-exp"
+                                         :short-version "2.0-flash-exp"
+                                         :path "/v1beta/models/gemini-2.0-flash-exp"
+                                         :token-width 4
+                                         :context-window 1048576)
+        (chatgpt-shell-google-make-model :version "gemini-1.5-pro-latest"
                                          :short-version "1.5-pro-latest"
                                          :path "/v1beta/models/gemini-1.5-pro-latest"
                                          :token-width 4
